@@ -1,0 +1,70 @@
+create table if not exists role (
+    id_role int primary key auto_increment,
+    NameRole varchar(80)
+    ) engine=innodb;
+create table if not EXISTS users(
+    id_user int PRIMARY key AUTO_INCREMENT,
+    NomUser varchar(50),
+    PrenomUser varchar(50),
+    LoginUser varchar(80) unique,
+    EmailUser varchar(100) unique,
+    PasswordUser varchar(255),
+    id_role int,
+    foreign key (id_role) references role(id_role)
+)ENGINE = innodb;
+    
+create table if not EXISTS Auteur(
+	NumAuteur int PRIMARY key AUTO_INCREMENT,
+    NomAuteur varchar(50),
+    AdresseAuteur varchar(90)
+)engine = innodb;
+
+create table if not EXISTS editeur(
+	NumEditeur int PRIMARY KEY AUTO_INCREMENT,
+    NomEditeur varchar(50),
+    AdresseEditeur varchar(90) 
+)engine = innodb;
+
+create table if not EXISTS theme(
+	NumTheme int PRIMARY KEY AUTO_INCREMENT,
+    intituleTheme varchar(50)
+)ENGINE=INNODB;
+
+create table if not EXISTS livre(
+    NumLivre int PRIMARY key AUTO_INCREMENT,
+    TitreLivre varchar(150),
+    AnneeEdition int,
+    NumAuteur int,
+    NumEditeur int,
+    NumTheme int,
+    photo blob,
+    nbr_exmp int,
+    FOREIGN key (NumAuteur) REFERENCES Auteur(NumAuteur),
+    FOREIGN key (NumEditeur) REFERENCES editeur(NumEditeur),
+    FOREIGN key (NumTheme) REFERENCES theme(NumTheme)
+)ENGINE=innodb;
+
+CREATE TABLE IF NOT EXISTS emprunt (
+    id_emprunt INT AUTO_INCREMENT PRIMARY KEY,
+    id_user INT NULL,
+    NumLivre INT NOT NULL,
+    nom_complet VARCHAR(150) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    telephone VARCHAR(20) NOT NULL,
+    date_emprunt DATE NOT NULL,
+    date_retour_prevu DATE NOT NULL,
+    date_retour date Null,
+    quantite INT DEFAULT 1,
+    status enum('en_cours', 'en retard' , 'retourne') default 'en_cours',
+    FOREIGN KEY (id_user) REFERENCES users(id_user),
+    FOREIGN KEY (NumLivre) REFERENCES livre(NumLivre) ON DELETE CASCADE
+) ENGINE=innodb;
+
+CREATE TABLE favoris (
+    id_user INT NOT NULL,
+    id_livre INT NOT NULL,
+    date_ajout TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_user, id_livre),
+    FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE,
+    FOREIGN KEY (id_livre) REFERENCES livre(NumLivre) ON DELETE CASCADE
+) ENGINE=InnoDB;

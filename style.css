@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+    --brand-color: #346739;
+    --seconde-brand-color: #79ae6f;
+    --thirt-brand-color: #9fcb98;
+    --back-color: #dde6dc;
+    --surface-color: #ebebeb;
+    --text-color: #121311;
+    --second-text-color: #2a2c28;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+    line-height: 1.5rem;
+}
+
+.maincontainer {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-auto-rows: 70px 1fr;
+    grid-template-areas: "navlg navlg" "nav container";
+    min-height: 100vh;
+}
+
+.container {
+    grid-area: container;
+    background-color: var(--back-color);
+    padding: 0.85em;
+}
+dialog {
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    width: 400px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+dialog[open],
+dialog.adddia {
+    padding: 20px;
+    gap: 15px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+dialog input {
+    padding: 7px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--surface-color);
+    width: 100%;
+}
+
+dialog .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+dialog .buttons button {
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    cursor: pointer;
+}
+
+dialog .buttons #submit-btn,
+dialog .buttons button[type="submit"] {
+    background-color: var(--brand-color);
+    color: whitesmoke;
+}
+
+#add {
+    background-color: var(--brand-color);
+    color: whitesmoke;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    border: none;
+    svg {
+        fill: whitesmoke;
+    }
+}
+
+#photoup {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed var(--second-text-color);
+}
+
+select {
+    padding: 7px 20px;
+    width: 100%;
+    transition: ease-in 0.1s;
+    appearance: base-select;
+    background-color: var(--surface-color);
+    border: 0.3px solid var(--brand-color);
+}
+
+select:focus {
+    transform: scale(1.02);
+    border-color: var(--brand-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+    overflow-x: auto;
+}
+
+.box {
+    background-color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+    span {
+        color: var(--brand-color);
+        font-weight: bold;
+    }
+}
+.table_con {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    min-width: 720px;
+    background-color: var(--surface-color);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+table,
+tr,
+td {
+    border-collapse: collapse;
+    padding: 15px;
+    gap: 0;
+    color: var(--secondary-text-color);
+}
+
+tr,
+td {
+    border-bottom: 1px solid var(--secondary-text-color);
+}
+
+tr:hover {
+    transform: scale(1.01);
+}
+
+#titre_ta {
+    background-color: var(--brand-color);
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+button {
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+#submit-btn {
+    background-color: #346739;
+    color: whitesmoke;
+}
+#edit-btn {
+    background-color: #346739;
+    color: whitesmoke;
+}
+
+#supp-btn {
+    background-color: #b33535;
+    color: whitesmoke;
+}
+
+.hidden {
+    display: none !important;
+}
