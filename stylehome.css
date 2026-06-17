@@ -2,8 +2,8 @@
 
 :root {
     --brand-color: #346739;
-    --seconde-brand-color: #79AE6F;
-    --thirt-brand-color: #9FCB98;
+    --seconde-brand-color: #79ae6f;
+    --thirt-brand-color: #9fcb98;
     --back-color: #dde6dc;
     --surface-color: #ebebeb;
     --text-color: #121311;
@@ -32,13 +32,13 @@
     padding: 2em;
 }
 
-svg {
+.header h1 svg{
   fill: var(--brand-color);
 }
 
 header {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 header h1 {
@@ -112,7 +112,9 @@ header h1 {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
@@ -150,17 +152,17 @@ header h1 {
     font-size: 0.8rem;
     font-weight: 600;
     color: #ffffff;
-  svg{
-    fill: white;
-  }
+    svg {
+        fill: white;
+    }
 }
 
 .status-badge.available {
-    background-color: #00C853;
+    background-color: #00c853;
 }
 
 .status-badge.borrowed {
-    background-color: #FF3D00;
+    background-color: #ff3d00;
 }
 
 .info_box {
@@ -174,7 +176,7 @@ header h1 {
 
 .genre-badge {
     align-self: flex-start;
-    background-color: var(--thirt-brand-color); 
+    background-color: var(--thirt-brand-color);
     color: var(--brand-color);
     padding: 4px 12px;
     border-radius: 12px;
@@ -193,7 +195,7 @@ header h1 {
 
 .book-author {
     font-size: 0.9rem;
-    color: var(--second-text-color); 
+    color: var(--second-text-color);
     margin-bottom: 1rem;
 }
 
@@ -212,7 +214,6 @@ header h1 {
 .btn-get:hover {
     background-color: var(--seconde-brand-color);
 }
-
 
 .book-dialog {
     border: none;
@@ -340,7 +341,9 @@ header h1 {
     font-size: 0.95rem;
 }
 
-a{text-decoration: none;}
+a {
+    text-decoration: none;
+}
 
 .btn-emprunter {
     background-color: #346739;
@@ -373,18 +376,18 @@ a{text-decoration: none;}
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 1. Style dial DISPONIBLE (Khder) --- */
+
 .dialog-status-box.badge-dispo {
-    background-color: #f0fdf4; 
-    border: 1px solid #bbf7d0;
+    background-color: var(--surface-color);
+    border: 1px solid var(--thirt-brand-color);
     border-radius: 16px;
     padding: 12px;
 }
 .dialog-status-box.badge-dispo .status-title {
-    color: #15803d;
+    color: var(--brand-color);
     font-weight: 700;
     font-size: 1.1rem;
     display: flex;
@@ -397,10 +400,10 @@ a{text-decoration: none;}
     margin: 0;
 }
 
-/* --- 2. Style dial NON DISPONIBLE (Figma Style exact dial l-pink/7mer) --- */
+
 .status-soldout {
-    background-color: #FFF1F2 !important; 
-    border-radius: 16px !important;       
+    background-color: #fff1f2 !important;
+    border-radius: 16px !important;
     padding: 16px !important;
     margin-top: 8px;
     display: flex !important;
@@ -410,7 +413,7 @@ a{text-decoration: none;}
 }
 
 .soldout-title {
-    color: #E11D48 !important; 
+    color: #e11d48 !important;
     font-size: 1.25rem !important;
     font-weight: 700 !important;
     display: flex !important;
@@ -419,14 +422,61 @@ a{text-decoration: none;}
 }
 
 .soldout-title svg {
-    stroke: #E11D48;
+    stroke: #e11d48;
 }
 
 .soldout-desc {
-    color: #1F2937 !important; 
+    color: #1f2937 !important;
     font-size: 1.05rem !important;
     font-weight: 400 !important;
     margin: 0 !important;
-    padding-left: 28px !important; 
+    padding-left: 28px !important;
 }
 
+.img_box {
+    position: relative;
+}
+.btn-fav {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.3s;
+}
+.btn-fav:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+.btn-fav svg {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+.pagination a,
+.pagination span {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+.pagination .active {
+    background-color: var(--brand-color);
+    color: white;
+    border-color: var(--brand-color);
+}

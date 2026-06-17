@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
 :root {
     --brand-color: #346739;
     --seconde-brand-color: #79ae6f;
@@ -14,10 +13,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat;
     line-height: 1.5rem;
 }
-
 .maincontainer {
     display: grid;
     grid-template-columns: 1fr;
@@ -31,9 +29,9 @@
     background-color: var(--back-color);
     padding: 2em;
 }
-h2 {
-    color: #1a4329;
-    margin-bottom: 25px;
+
+.header h1 svg{
+  fill: var(--brand-color);
 }
 .cards-grid {
     display: grid;

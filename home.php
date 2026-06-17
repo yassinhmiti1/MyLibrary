@@ -18,44 +18,7 @@ $current_theme = isset($_REQUEST["id_theme"]) ? $_REQUEST["id_theme"] : 'all';
   <link rel="stylesheet" href="stylehome.css">
   <style>
     
-    .img_box { position: relative; }
-    .btn-fav {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: rgba(0, 0, 0, 0.6);
-        border: none;
-        border-radius: 50%;
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        transition: background 0.3s;
-    }
-    .btn-fav:hover { background: rgba(255, 0, 0, 0.8); }
-    .btn-fav svg { fill: #fff; width: 20px; height: 20px; }
     
-    .pagination {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin: 30px 0;
-    }
-    .pagination a, .pagination span {
-        padding: 8px 16px;
-        border: 1px solid #ccc;
-        text-decoration: none;
-        color: #333;
-        border-radius: 4px;
-    }
-    .pagination .active {
-        background-color: #346739;
-        color: white;
-        border-color: #346739;
-    }
   </style>
 </head>
 <body>
@@ -97,15 +60,12 @@ $current_theme = isset($_REQUEST["id_theme"]) ? $_REQUEST["id_theme"] : 'all';
 
       <div class="box-container">
         <?php
-        // --- 2. حساب المجموع على حساب الفلتر وجلب البيانات المحددة بالـ LIMIT و OFFSET ---
         if ($current_theme && $current_theme !== 'all') {
-          // حساب المجموع للفيم المحدد
           $count_sql = "SELECT COUNT(*) FROM livre WHERE NumTheme = ?";
           $stmt_count = $cnx->prepare($count_sql);
           $stmt_count->execute([$current_theme]);
           $total_books = $stmt_count->fetchColumn();
 
-          // جلب الكتب بـ LIMIT
           $sql = "SELECT livre.*, theme.intituleTheme, Auteur.NomAuteur FROM livre JOIN theme ON livre.NumTheme = theme.NumTheme Join Auteur on livre.NumAuteur= Auteur.NumAuteur WHERE livre.NumTheme = ? LIMIT $limit OFFSET $offset";
           $requete = $cnx->prepare($sql);
           $requete->execute([$current_theme]);

@@ -1,9 +1,9 @@
 <?php
 
-$srv = "192.168.1.9";
+$srv = "localhost";
 $db = "bibiotique_102";
 $us = "root";
-$pass = "root";
+$pass = "";
 
 $cnx = new PDO("mysql:host=$srv; dbname=$db", $us, $pass);
 ?>
