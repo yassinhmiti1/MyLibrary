@@ -9,6 +9,16 @@
     --second-text-color: #2a2c28;
 }
 
+.darkmode {
+    --brand-color: #529659;
+    --seconde-brand-color: #79ae6f;
+    --thirt-brand-color: #3b5e3d; 
+    --back-color: #121612;
+    --surface-color: #1a201b;
+    --text-color: #f4f6f4;
+    --second-text-color: #a3aba3;
+}
+
 * {
     margin: 0;
     padding: 0;

@@ -39,68 +39,7 @@ $requete->execute([$id_user]);
 <head>
   <meta charset="UTF-8">
   <title>My Favorite Books</title>
-  <link rel="stylesheet" href="stylehome.css">
-  <style>
-    .img_box { position: relative; }
-    
-    .btn-fav-remove {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: rgba(220, 20, 60, 0.9);
-        border: none;
-        border-radius: 50%;
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        transition: transform 0.2s, background 0.3s;
-    }
-    .btn-fav-remove:hover { 
-        transform: scale(1.1);
-        background: rgb(180, 10, 40);
-    }
-    .btn-fav-remove svg { 
-        fill: #fff; 
-        width: 20px; 
-        height: 20px; 
-    }
-    .box {
-        transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    .box.fade-out {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    .pagination { 
-        display: flex; 
-        justify-content: center; 
-        gap: 10px; 
-        margin: 40px 0; 
-        grid-column: 1 / -1; 
-    }
-    .pagination a, .pagination span { 
-        padding: 8px 16px; 
-        border: 1px solid #ccc; 
-        text-decoration: none; 
-        color: #333; 
-        border-radius: 4px; 
-        font-weight: bold;
-        transition: background 0.2s;
-    }
-    .pagination a:hover {
-        background-color: #f0f0f0;
-    }
-    .pagination .active { 
-        background-color: #346739; 
-        color: white; 
-        border-color: #346739; 
-    }
-  </style>
+  <link rel="stylesheet" href="stylefav.css">
 </head>
 <body>
   <main class="maincontainer">

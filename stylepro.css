@@ -10,6 +10,16 @@
     --second-text-color: #2a2c28;
 }
 
+.darkmode {
+    --brand-color: #529659;
+    --seconde-brand-color: #79ae6f;
+    --thirt-brand-color: #3b5e3d; 
+    --back-color: #121612;
+    --surface-color: #1a201b;
+    --text-color: #f4f6f4;
+    --second-text-color: #a3aba3;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +43,7 @@
 }
 
 .profile-card {
-    background: white;
+    background: var(--surface-color);
     width: 100%;
     max-width: 100%;
     border-radius: 16px;
@@ -52,13 +62,13 @@
 }
 
 .modifier-btn {
-    background: white;
+    background: var(--surface-color);
     border: none;
     border-radius: 8px;
     padding: 6px 14px;
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--text-color);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -98,7 +108,7 @@
 
 .user-name {
     font-size: 22px;
-    color: var(--text-dark);
+    color: var(--text-color);
     font-weight: 700;
 }
 
@@ -121,7 +131,7 @@
 
 .membership-date {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--second-text-color);
 }
 
 .stats-container {
@@ -132,7 +142,7 @@
 }
 
 .stat-box {
-    background-color: #e6ede9;
+    background-color: var(--back-color);
     border-radius: 10px;
     padding: 12px 16px;
     display: flex;
@@ -142,7 +152,7 @@
 
 .stat-label {
     font-size: 12px;
-    color: var(--text-muted);
+    color: var(--second-text-color);
 }
 
 .stat-value {
@@ -151,23 +161,22 @@
 }
 
 .text-green {
-    color: #2c512e;
+    color: var(--brand-color);
 }
 
 .divider {
     border: none;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--second-text-color);
     margin: 15px 20px;
 }
 
-/* Sections des inputs */
 .info-section, .security-section {
     padding: 0 20px;
 }
 
 h3 {
     font-size: 16px;
-    color: var(--text-dark);
+    color: var(--text-color);
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -181,7 +190,7 @@ h3 {
 
 .input-group label {
     font-size: 13px;
-    color: var(--text-dark);
+    color: var(--text-color);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -189,23 +198,23 @@ h3 {
 }
 
 .input-group label svg {
-    color: var(--text-muted);
+    color: var(--text-color);
 }
 
 .input-group input {
-    background-color: #f9fafb;
-    border: 1px solid #f3f4f6;
+    background-color: var(--back-color);
+    border: 1px solid #373737;
     border-radius: 8px;
     padding: 12px;
     font-size: 14px;
-    color: #374151;
+    color: var(--second-text-color);
     width: 100%;
     outline: none;
 }
 
 .password-btn {
-    background-color: #e5e7eb;
-    color: var(--text-dark);
+    background-color: var(--back-color);
+    color: var(--second-text-color);
     border: none;
     border-radius: 8px;
     padding: 12px;

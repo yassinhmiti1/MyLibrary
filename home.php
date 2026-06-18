@@ -70,10 +70,9 @@ $current_theme = isset($_REQUEST["id_theme"]) ? $_REQUEST["id_theme"] : 'all';
           $requete = $cnx->prepare($sql);
           $requete->execute([$current_theme]);
         } else {
-          // حساب المجموع لكل الكتب
+
           $total_books = $cnx->query("SELECT COUNT(*) FROM livre")->fetchColumn();
 
-          // جلب كل الكتب بـ LIMIT
           $sql = "SELECT livre.*, theme.intituleTheme, Auteur.NomAuteur FROM livre JOIN theme ON livre.NumTheme = theme.NumTheme Join Auteur on livre.NumAuteur= Auteur.NumAuteur LIMIT $limit OFFSET $offset";
           $requete = $cnx->query($sql);
         }
@@ -165,7 +164,6 @@ $current_theme = isset($_REQUEST["id_theme"]) ? $_REQUEST["id_theme"] : 'all';
         if (e.target === dialog) dialog.close();
     });
 
-    // add favorite
     function addToFavorite(bookId) {
         fetch('add_favorite.php', {
             method: 'POST',

@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+    --brand-color: #346739;
+    --seconde-brand-color: #79ae6f;
+    --thirt-brand-color: #9fcb98;
+    --back-color: #dde6dc;
+    --surface-color: #ebebeb;
+    --text-color: #121311;
+    --second-text-color: #2a2c28;
+}
+
+.darkmode {
+    --brand-color: #529659;
+    --seconde-brand-color: #79ae6f;
+    --thirt-brand-color: #3b5e3d; 
+    --back-color: #121612;
+    --surface-color: #1a201b;
+    --text-color: #f4f6f4;
+    --second-text-color: #a3aba3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.5rem;
+}
+
+.maincontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 70px 1fr;
+    grid-template-areas: "navlg" "container";
+    min-height: 100vh;
+}
+
+.container {
+    grid-area: container;
+    background-color: var(--back-color);
+    padding: 2em;
+}
+
+.header h1 svg {
+    fill: var(--brand-color);
+}
+
+.header {
+    gap: 30px;
+}
+
+.header p{
+  color: var(--second-text-color);
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.img_box {
+    position: relative;
+}
+
+.img_box {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    background-color: var(--surface-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info_box {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+    background: var(--surface-color);
+}
+
+.genre-badge {
+    align-self: flex-start;
+    background-color: var(--thirt-brand-color);
+    color: var(--brand-color);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.book-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 0.2rem;
+    line-height: 1.3;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    color: var(--second-text-color);
+    margin-bottom: 1rem;
+}
+
+.btn-fav-remove {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(220, 20, 60, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition:
+        transform 0.2s,
+        background 0.3s;
+}
+.btn-fav-remove:hover {
+    transform: scale(1.1);
+    background: rgb(180, 10, 40);
+}
+.btn-fav-remove svg {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+}
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.box {
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.box {
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+.box.fade-out {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+    grid-column: 1 / -1;
+}
+.pagination a,
+.pagination span {
+    padding: 8px 16px;
+    border: 1px solid var(--surface-color);
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+.pagination .active {
+    background-color: #346739;
+    color: var(--surface-color);
+    border-color: #346739;
+}

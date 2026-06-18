@@ -10,6 +10,16 @@
     --second-text-color: #2a2c28;
 }
 
+.darkmode {
+    --brand-color: #529659;
+    --seconde-brand-color: #79ae6f;
+    --thirt-brand-color: #3b5e3d; 
+    --back-color: #121612;
+    --surface-color: #1a201b;
+    --text-color: #f4f6f4;
+    --second-text-color: #a3aba3;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -32,22 +42,26 @@
     padding: 2em;
 }
 
-.header h1 svg{
-  fill: var(--brand-color);
+.header h1 svg {
+    fill: var(--brand-color);
 }
 
-header {
-    display: flex;
+.header {
     gap: 30px;
 }
 
-header h1 {
+.header h1 {
     font-size: 1.6rem;
     font-weight: bold;
+  color: var(--text-color);
+}
+
+.header p{
+  color: var(--second-text-color);
 }
 
 .filter_box {
-    background-color: whitesmoke;
+    background-color: var(--surface-color);
     padding: 24px;
     width: 100%;
     display: flex;
@@ -57,6 +71,9 @@ header h1 {
     gap: 16px;
     border-radius: 16px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
+  svg{
+    fill: var(--brand-color);
+  }
 }
 
 .filter_box h2 {
@@ -77,7 +94,7 @@ header h1 {
 }
 
 .filter-value {
-    background-color: var(--surface-color);
+    background-color: var(--back-color);
     color: var(--text-color);
     padding: 10px 22px;
     border: none;
@@ -171,7 +188,7 @@ header h1 {
     flex-direction: column;
     gap: 0.5rem;
     flex-grow: 1;
-    background: #ffffff;
+    background: var(--surface-color);
 }
 
 .genre-badge {
@@ -224,7 +241,7 @@ header h1 {
     max-height: 85vh;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--surface-color);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -245,7 +262,7 @@ header h1 {
 }
 
 .dialog-img-container {
-    background-color: #f5f5f5;
+    background-color: var(--back-color);
     width: 100%;
     padding: 20px 0;
     display: flex;
@@ -256,7 +273,7 @@ header h1 {
 .dialog-img-container img {
     max-width: 100% !important;
     height: auto !important;
-    max-height: 200px !important; /* Fix dial s-sora bach dima t-koun blasa l-bouton */
+    max-height: 200px !important;
     object-fit: contain !important;
     border-radius: 8px;
 }
@@ -271,7 +288,7 @@ header h1 {
 .dialog-genre {
     align-self: flex-start;
     background-color: rgba(94, 148, 102, 0.15);
-    color: #346739;
+    color: var(--brand-color);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -281,13 +298,13 @@ header h1 {
 .dialog-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #1a2530;
+    color: var(--text-color);
     margin: 0;
 }
 
 .dialog-author {
     font-size: 0.9rem;
-    color: #667085;
+    color: var(--second-text-color);
 }
 
 .dialog-rating {
@@ -318,7 +335,7 @@ header h1 {
 .dialog-meta-table td.meta-value {
     text-align: right;
     font-weight: 600;
-    color: #1a2530;
+    color: var(--second-text-color);
 }
 
 .dialog-quantity-section {
@@ -330,7 +347,7 @@ header h1 {
 .dialog-quantity-section label {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #344054;
+    color: var(--second-text-color);
 }
 
 .quantity-input {
@@ -379,7 +396,6 @@ a {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .dialog-status-box.badge-dispo {
     background-color: var(--surface-color);
     border: 1px solid var(--thirt-brand-color);
@@ -400,16 +416,15 @@ a {
     margin: 0;
 }
 
-
 .status-soldout {
-    background-color: #fff1f2 !important;
+    background-color: var(--surface-color) !important;
     border-radius: 16px !important;
     padding: 16px !important;
     margin-top: 8px;
     display: flex !important;
     flex-direction: column !important;
     gap: 6px !important;
-    border: none !important;
+    border: 1px solid #e11d48 !important;
 }
 
 .soldout-title {
@@ -426,7 +441,7 @@ a {
 }
 
 .soldout-desc {
-    color: #1f2937 !important;
+    color: var(--second-text-color) !important;
     font-size: 1.05rem !important;
     font-weight: 400 !important;
     margin: 0 !important;
@@ -472,7 +487,7 @@ a {
     padding: 8px 16px;
     border: 1px solid #ccc;
     text-decoration: none;
-    color: #333;
+    color: var(--second-text-color);
     border-radius: 4px;
 }
 .pagination .active {
