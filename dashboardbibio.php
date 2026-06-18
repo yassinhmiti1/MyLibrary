@@ -253,7 +253,7 @@ if (isset($_POST["supp-thm-btn"])) {
       padding: 8px 14px;
       border: 1px solid #ccc;
       text-decoration: none;
-      color: #333;
+      color: var(--second-text-color);
       border-radius: 4px;
       font-weight: 500;
       transition: all 0.3s ease;
