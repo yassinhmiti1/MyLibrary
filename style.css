@@ -52,6 +52,12 @@
     gap: 15px;
     position: relative;
 }
+
+section{
+  h1{
+    color: var(--text-color);
+  }
+}
 dialog {
     margin: auto;
     border: none;
