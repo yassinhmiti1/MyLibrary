@@ -22,11 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["change_password"])) {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
-        // Hna verification: (ila knti m-hasher l-pass dirlha password_verify, ila simple gha t-gadd b ===)
-        // Ghadi ndirlis verification standard standard, t9dr t-baddalha 3la hsab kfash m-stockih f l-DB
         if ($user['PasswordUser'] === $old_pass) {
             if ($new_pass === $conf_pass) {
-                // 2. N-update l-mot de passe jdid
                 $sqlUpdate = "UPDATE users SET PasswordUser = ? WHERE id_user = ?";
                 $stmtUp = $cnx->prepare($sqlUpdate);
                 $stmtUp->execute([$new_pass, $id_user]);
@@ -49,18 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["change_password"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Changer le mot de passe</title>
-  <link rel="stylesheet" href="stylepro.css">
-  <style>
-    body { background-color: #edf4ee; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-    .card-pass { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 100%; max-width: 400px; }
-    .card-pass h2 { color: #2e6f40; margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
-    .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-    .btn-submit-pass { background-color: #2e6f40; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-    .btn-submit-pass:hover { background-color: #1e4a2a; }
-    .back-link { display: block; text-align: center; margin-top: 15px; color: #666; text-decoration: none; font-size: 0.9rem; }
-  </style>
+  <link rel="stylesheet" href="stylepass.css">
+  <script src="scriptpas.js" defer></script>
 </head>
 <body>
 

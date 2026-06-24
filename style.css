@@ -193,7 +193,7 @@ table {
 
 thead{
     background-color: var(--brand-color);
-  tr{
+  td{
     color: whitesmoke;
   }
     border-radius: 5px;
