@@ -191,11 +191,14 @@ table {
     overflow-x: auto;
 }
 
-#titre_ta {
+thead{
     background-color: var(--brand-color);
+  tr{
     color: whitesmoke;
+  }
     border-radius: 5px;
 }
+
 table,
 tr,
 td {
@@ -207,11 +210,13 @@ td {
 tr,
 td {
     border-bottom: 1px solid var(--secondary-text-color);
+  color: var(--second-text-color);
 }
 
 tr:hover {
     transform: scale(1.01);
 }
+
 
 
 button {

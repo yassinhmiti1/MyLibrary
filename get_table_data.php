@@ -33,7 +33,7 @@ try {
         $stmt->execute();
         $livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $rows_html = "<tr id='titre_ta'><td>Id</td><td>Nom livre</td><td>Année</td><td>Auteur</td><td>Editeur</td><td>Theme</td><td>Nombre exemplair</td><td>Cover</td><td>Edit</td><td>Supprimer</td></tr>";
+        $rows_html = "<thead id='table-ti'><tr><td>Id</td><td>Nom livre</td><td>Année</td><td>Auteur</td><td>Editeur</td><td>Theme</td><td>Nombre exemplair</td><td>Cover</td><td>Edit</td><td>Supprimer</td></tr></thead>";
 
         if (count($livres) > 0) {
             foreach ($livres as $row) {
@@ -95,7 +95,7 @@ try {
         $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         $stmt->execute();
 
-        $rows_html = "<tr id='titre_ta'><td>Id User</td><td>Nom</td><td>Prenom</td><td>Username</td><td>Email</td><td>Role</td><td>Edit</td><td>Supprimer</td></tr>";
+        $rows_html = "<thead id='table-ti'><tr><td>Id User</td><td>Nom</td><td>Prenom</td><td>Username</td><td>Email</td><td>Role</td><td>Edit</td><td>Supprimer</td></tr></thead>";
         while ($rowusl = $stmt->fetch()) {
             $rows_html .= "<tr>
                 <td>{$rowusl[0]}</td><td>" . htmlspecialchars($rowusl[1]) . "</td><td>" . htmlspecialchars($rowusl[2]) . "</td><td>" . htmlspecialchars($rowusl[3]) . "</td><td>" . htmlspecialchars($rowusl[4]) . "</td><td>" . htmlspecialchars($rowusl[5] ?? 'Aucun') . "</td>
@@ -115,7 +115,7 @@ try {
         $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         $stmt->execute();
 
-        $rows_html = "<tr id='titre_ta'><td>Id Auteur</td><td>Nom</td><td>Adresse</td><td>Edit</td><td>Supprimer</td></tr>";
+        $rows_html = "<thead id='table-ti'><tr><td>Id Auteur</td><td>Nom</td><td>Adresse</td><td>Edit</td><td>Supprimer</td></tr></thead>";
         while ($r = $stmt->fetch()) {
             $rows_html .= "<tr>
                 <td>{$r[0]}</td><td>" . htmlspecialchars($r[1]) . "</td><td>" . htmlspecialchars($r[2]) . "</td>
@@ -135,7 +135,7 @@ try {
         $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         $stmt->execute();
 
-        $rows_html = "<tr id='titre_ta'><td>Id Editeur</td><td>Nom</td><td>Adresse</td><td>Edit</td><td>Supprimer</td></tr>";
+        $rows_html = "<thead id='table-ti'><tr><td>Id Editeur</td><td>Nom</td><td>Adresse</td><td>Edit</td><td>Supprimer</td></tr></thead>";
         while ($r = $stmt->fetch()) {
             $rows_html .= "<tr>
                 <td>{$r[0]}</td><td>" . htmlspecialchars($r[1]) . "</td><td>" . htmlspecialchars($r[2]) . "</td>
@@ -155,7 +155,7 @@ try {
         $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         $stmt->execute();
 
-        $rows_html = "<tr id='titre_ta'><td>Id Theme</td><td>Intitulé Theme</td><td>Edit</td><td>Supprimer</td></tr>";
+        $rows_html = "<thead><tr><td>Id Theme</td><td>Intitulé Theme</td><td>Edit</td><td>Supprimer</td></tr></thead>";
         while ($r = $stmt->fetch()) {
             $rows_html .= "<tr>
                 <td>{$r[0]}</td><td>" . htmlspecialchars($r[1]) . "</td>
@@ -183,13 +183,13 @@ try {
         $stmt->execute();
         $emprunts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $rows_html = "<tr id='titre_ta'>
+        $rows_html = "<thead id='table-ti'><tr>
             <td>Livre</td>
             <td>Utilisateur</td>
             <td>Date Emprunt</td>
             <td>Retour Prévu</td>
             <td>Status</td>
-        </tr>";
+        </tr></thead>";
 
         if (count($emprunts) > 0) {
             foreach ($emprunts as $row) {
